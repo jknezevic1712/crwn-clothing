@@ -52,6 +52,8 @@ class App extends React.Component {
   }
 }
 
+// Povezujes action na funkciju koju ces koristit u toj komponenti
+
 const mapDispatchToProps = (dispatch) => ({
   setCurrentUser: (user) => dispatch(setCurrentUser(user)),
 });
