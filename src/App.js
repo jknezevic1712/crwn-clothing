@@ -1,5 +1,5 @@
 import React from "react";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 
 import "./App.css";
@@ -45,7 +45,17 @@ class App extends React.Component {
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route path="/shop" component={ShopPage} />
-          <Route path="/signin" component={SignInAndSignUpPage} />
+          <Route
+            exact
+            path="/signin"
+            render={() =>
+              this.props.currentUser ? (
+                <Redirect to="/" />
+              ) : (
+                <SignInAndSignUpPage />
+              )
+            }
+          />
         </Switch>
       </div>
     );
@@ -64,11 +74,16 @@ class App extends React.Component {
 * Prvo se pokrene prva zagrada, pa kad se ona izvrsi, onda se pokrene druga, odnosno (App)
 
 
-! Verdict: mapDispatchToProps se pokreće prvi i sprema usera ako ga je dohvatio u componentDidMount() u redux store i onda pokreće App komponentu
+! Verdict: mapDispatchToProps se pokreće prvi i postavi currentUsera null i onda se pokreće App, odnosno componentDidMount() koji dohvati usera kada se prijavimo ili smo prijavljeni i onda pozove funkciju
+! deklariranu u mapDispatchToProps gdje šalje podatke o useru nakon čega se App re-rendera te se ponovo? pokrene mapDispatchToProps koji sada pošalje podatke u redux store te sada imamo currentUsera
 */
+
+const mapStateToProps = ({ user }) => ({
+  currentUser: user.currentUser,
+});
 
 const mapDispatchToProps = (dispatch) => ({
   setCurrentUser: (user) => dispatch(setCurrentUser(user)),
 });
 
-export default connect(null, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);
