@@ -32,6 +32,12 @@ const Header = ({ currentUser }) => (
   </div>
 );
 
+/* 
+! mapStateToProps prihvaca state kao argument te zapravo u objekt, tj varijablu currentUser sprema currentUsera kojeg pomoću connecta dolje dohvati iz redux store-a nakon čega pokreće Header component
+
+! Verdict: mapStateToProps se pokreće prvi i dohvaća trenutnog usera iz redux store-a i onda pokreće Header komponentu koja primi tog usera kao prop
+*/
+
 const mapStateToProps = (state) => ({
   currentUser: state.user.currentUser,
 });
