@@ -66,8 +66,10 @@ class ShopPage extends React.Component {
     //   .then((response) => response.json())
     //   .then((collections) => console.log(collections));
 
-    const { fetchCollectionsStartAsync } = this.props;
-    fetchCollectionsStartAsync();
+    // const { fetchCollectionsStartAsync } = this.props;
+    // fetchCollectionsStartAsync();
+    const { fetchCollectionsStart } = this.props;
+    fetchCollectionsStart();
   }
 
   render() {
@@ -126,7 +128,8 @@ class ShopPage extends React.Component {
 const mapDispatchToProps = (dispatch) => ({
   // updateCollections: (collectionsMap) =>
   //   dispatch(updateCollections(collectionsMap)),
-  fetchCollectionsStartAsync: () => dispatch(fetchCollectionsStartAsync()),
+  // fetchCollectionsStartAsync: () => dispatch(fetchCollectionsStartAsync()),
+  fetchCollectionsStart: () => dispatch(fetchCollectionsStart()),
 });
 
 export default connect(null, mapDispatchToProps)(ShopPage);
