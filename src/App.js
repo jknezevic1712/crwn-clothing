@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
@@ -16,57 +16,54 @@ import CheckoutPage from "./pages/checkout/checkout.component";
 import { selectCurrentUser } from "./redux/user/user.selectors";
 import { checkUserSession } from "./redux/user/user.actions";
 
-class App extends React.Component {
-  unSubscribeFromAuth = null;
+const App = ({ checkUserSession, currentUser }) => {
+  // unSubscribeFromAuth = null;
 
-  componentDidMount() {
-    // const { setCurrentUser } = this.props;
-    // this.unSubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
-    //   if (userAuth) {
-    //     const userRef = await createUserProfileDocument(userAuth);
-    //     userRef.onSnapshot((snapShot) => {
-    //       setCurrentUser({
-    //         id: snapShot.id,
-    //         ...snapShot.data(),
-    //       });
-    //     });
-    //   } else {
-    //     setCurrentUser(userAuth);
-    //   }
-    // });
-
-    const { checkUserSession } = this.props;
+  useEffect(() => {
     checkUserSession();
-  }
+  }, [checkUserSession]);
+  // componentDidMount() {
+  // const { setCurrentUser } = this.props;
+  // this.unSubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
+  //   if (userAuth) {
+  //     const userRef = await createUserProfileDocument(userAuth);
+  //     userRef.onSnapshot((snapShot) => {
+  //       setCurrentUser({
+  //         id: snapShot.id,
+  //         ...snapShot.data(),
+  //       });
+  //     });
+  //   } else {
+  //     setCurrentUser(userAuth);
+  //   }
+  // });
 
-  componentWillUnmount() {
-    this.unSubscribeFromAuth();
-  }
+  //   const { checkUserSession } = this.props;
+  //   checkUserSession();
+  // }
 
-  render() {
-    return (
-      <div>
-        <Header />
-        <Switch>
-          <Route exact path="/" component={HomePage} />
-          <Route path="/shop" component={ShopPage} />
-          <Route exact path="/checkout" component={CheckoutPage} />
-          <Route
-            exact
-            path="/signin"
-            render={() =>
-              this.props.currentUser ? (
-                <Redirect to="/" />
-              ) : (
-                <SignInAndSignUpPage />
-              )
-            }
-          />
-        </Switch>
-      </div>
-    );
-  }
-}
+  // componentWillUnmount() {
+  //   this.unSubscribeFromAuth();
+  // }
+
+  return (
+    <div>
+      <Header />
+      <Switch>
+        <Route exact path="/" component={HomePage} />
+        <Route path="/shop" component={ShopPage} />
+        <Route exact path="/checkout" component={CheckoutPage} />
+        <Route
+          exact
+          path="/signin"
+          render={() =>
+            currentUser ? <Redirect to="/" /> : <SignInAndSignUpPage />
+          }
+        />
+      </Switch>
+    </div>
+  );
+};
 
 /* 
 ! Connectom povezujes App.js sa reduxom, ali prije toga izvrsis (null, mapDispatchToProps) funkciju koja proslijedi usera do user.actions koji nam vrati type="SET_CURRENT_USER" i payload sa podacima o useru
