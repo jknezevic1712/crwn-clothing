@@ -12,8 +12,6 @@ import { takeLatest, call, put, all } from "redux-saga/effects";
 import ShopActionTypes from "./shop.types";
 
 export function* fetchCollectionsAsync() {
-  yield console.log("I am fired!");
-
   try {
     const collectionRef = firestore.collection("collections");
     const snapshot = yield collectionRef.get();

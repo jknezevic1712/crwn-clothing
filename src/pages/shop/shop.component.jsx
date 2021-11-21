@@ -15,10 +15,12 @@ import CollectionPageContainer from "../collection/collection.container";
 // } from "../../firebase/firebase.utils";
 
 // import { updateCollections } from "../../redux/shop/shop.actions";
-import {
-  fetchCollectionsStart,
-  fetchCollectionsStartAsync,
-} from "../../redux/shop/shop.actions";
+// import {
+//   fetchCollectionsStart,
+//   fetchCollectionsStartAsync,
+// } from "../../redux/shop/shop.actions";
+
+import { fetchCollectionsStart } from "../../redux/shop/shop.actions";
 // import {
 //   selectIsCollectionFetching,
 //   selectIsCollectionLoaded,
