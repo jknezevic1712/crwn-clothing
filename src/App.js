@@ -1,9 +1,10 @@
 import React, { useEffect } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
-import { connect } from "react-redux";
-import { createStructuredSelector } from "reselect";
+import { useSelector, useDispatch } from "react-redux";
+// import { createStructuredSelector } from "reselect";
 
-import "./App.css";
+// import "./App.css";
+import { GlobalStyle } from "./global.styles";
 
 import HomePage from "./pages/homepage/homepage.component";
 import ShopPage from "./pages/shop/shop.component";
@@ -16,12 +17,17 @@ import CheckoutPage from "./pages/checkout/checkout.component";
 import { selectCurrentUser } from "./redux/user/user.selectors";
 import { checkUserSession } from "./redux/user/user.actions";
 
-const App = ({ checkUserSession, currentUser }) => {
-  // unSubscribeFromAuth = null;
+// const App = ({ checkUserSession, currentUser }) => {
+const App = () => {
+  const currentUser = useSelector(selectCurrentUser);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    checkUserSession();
-  }, [checkUserSession]);
+    dispatch(checkUserSession());
+  }, [dispatch]);
+
+  // unSubscribeFromAuth = null;
+
   // componentDidMount() {
   // const { setCurrentUser } = this.props;
   // this.unSubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
@@ -48,6 +54,7 @@ const App = ({ checkUserSession, currentUser }) => {
 
   return (
     <div>
+      <GlobalStyle />
       <Header />
       <Switch>
         <Route exact path="/" component={HomePage} />
@@ -81,13 +88,13 @@ const App = ({ checkUserSession, currentUser }) => {
 ! deklariranu u mapDispatchToProps gdje šalje podatke o useru nakon čega se App re-rendera te se ponovo? pokrene mapDispatchToProps koji sada pošalje podatke u redux store te sada imamo currentUsera
 */
 
-const mapStateToProps = createStructuredSelector({
-  currentUser: selectCurrentUser,
-});
+// const mapStateToProps = createStructuredSelector({
+//   currentUser: selectCurrentUser,
+// });
 
-const mapDispatchToProps = (dispatch) => ({
-  checkUserSession: () => dispatch(checkUserSession()),
-});
+// const mapDispatchToProps = (dispatch) => ({
+//   checkUserSession: () => dispatch(checkUserSession()),
+// });
 
 // export default connect(mapStateToProps, mapDispatchToProps)(App);
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default App;
