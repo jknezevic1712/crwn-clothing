@@ -1,7 +1,5 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-// import { createStructuredSelector } from "reselect";
-// import { withRouter } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 
 import "./cart-dropdown.styles.scss";
@@ -39,11 +37,4 @@ const CartDropdown = () => {
   );
 };
 
-// const mapStateToProps = createStructuredSelector({
-//   cartItems: selectCartItems,
-// });
-
-/* 
-! Ovdje se "connect" prvi izvrsi pa onda "withRouter"
-*/
 export default CartDropdown;

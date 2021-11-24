@@ -4,7 +4,6 @@ import { connect } from "react-redux";
 import FormInput from "../form-input/form-input.component";
 import CustomButton from "../custom-button/custom-button.component";
 
-// import { auth, signInWithGoogle } from "../../firebase/firebase.utils";
 import {
   googleSignInStart,
   emailSignInStart,
@@ -25,13 +24,6 @@ const SignIn = ({ emailSignInStart, googleSignInStart }) => {
     const { email, password } = userCredentials;
 
     emailSignInStart(email, password);
-
-    // try {
-    //   await auth.signInWithEmailAndPassword(email, password);
-    //   this.setState({ email: "", password: "" });
-    // } catch (e) {
-    //   console.log(e);
-    // }
   };
 
   const handleChange = (e) => {

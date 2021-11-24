@@ -4,11 +4,6 @@ import "./collection-preview.styles.scss";
 
 import CollectionItem from "../collection-item/collection-item.component";
 
-// <h1{
-//       className="title"
-//       onClick={() => history.push(`${match.path}/${title.toLowerCase()}`)}
-//     >}
-
 const CollectionPreview = ({ title, items, history, match }) => (
   <div className="collection-preview">
     <h1 className="title">{title.toUpperCase()}</h1>

@@ -10,7 +10,6 @@ import {
   OptionLink,
 } from "./header.styles";
 
-// import { auth } from "../../firebase/firebase.utils";
 import CartIcon from "../cart-icon/cart-icon.component";
 import CartDropdown from "../cart-dropdown/cart-dropdown.component";
 import { selectCartHidden } from "../../redux/cart/cart.selectors";
@@ -37,12 +36,6 @@ const Header = ({ currentUser, hidden, signOutStart }) => (
     {hidden ? null : <CartDropdown />}
   </HeaderContainer>
 );
-
-/* 
-! mapStateToProps prihvaca state kao argument te zapravo u objekt, tj varijablu currentUser sprema currentUsera kojeg pomoću connecta dolje dohvati iz redux store-a nakon čega pokreće Header component
-
-! Verdict: mapStateToProps se pokreće prvi i dohvaća trenutnog usera iz redux store-a i onda pokreće Header komponentu koja primi tog usera kao prop
-*/
 
 const mapStateToProps = createStructuredSelector({
   currentUser: selectCurrentUser,
