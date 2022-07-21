@@ -1,17 +1,17 @@
 .collection-item {
-  width: 22vw;
+  width: 20%;
   display: flex;
   flex-direction: column;
-  height: 350px;
+  height: 100%;
+  justify-content: space-between;
   align-items: center;
   position: relative;
 
   .image {
     width: 100%;
-    height: 95%;
+    height: 350px;
     background-size: cover;
     background-position: center;
-    margin-bottom: 5px;
   }
 
   .custom-button {
@@ -70,6 +70,24 @@
 
     button {
       opacity: unset;
+    }
+  }
+}
+
+@media only screen and (min-width: 2560px) {
+  .collection-item {
+    .custom-button {
+      font-size: 1.05em;
+    }
+
+    .collection-footer {
+      .name {
+        font-size: 1.3em;
+      }
+
+      .price {
+        font-size: 1.3em;
+      }
     }
   }
 }

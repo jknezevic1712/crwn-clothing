@@ -30,3 +30,12 @@
     grid-row-gap: 5rem;
   }
 }
+
+@media only screen and (min-width: 2560px) {
+  .sign-in-and-sign-up {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 15rem;
+    margin-right: 39%;
+  }
+}

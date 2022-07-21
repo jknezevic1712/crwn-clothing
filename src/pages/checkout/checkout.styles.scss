@@ -30,11 +30,57 @@
   }
 
   button {
-    margin-left: auto;
-    margin-top: 50px;
+    min-width: 165px !important;
+    width: auto !important;
+    height: 50px !important;
+    letter-spacing: 0.5px !important;
+    line-height: 50px !important;
+    padding: 0 35px 0 35px !important;
+    font-size: 15px !important;
+    background: black !important;
+    color: white !important;
+    text-transform: uppercase !important;
+    font-family: "Open Sans Condensed" !important;
+    font-weight: bolder !important;
+    border: none !important;
+    cursor: pointer !important;
+    display: flex !important;
+    justify-content: center !important;
+
+    &:hover {
+      background-color: white !important;
+      color: black !important;
+      border: 1px solid black !important;
+    }
+
+    span {
+      background-image: unset !important;
+      font-family: unset !important;
+      font-size: unset !important;
+      position: unset !important;
+      padding: unset !important;
+      display: unset !important;
+      height: unset !important;
+      line-height: unset !important;
+      color: unset !important;
+      font-weight: unset !important;
+      box-shadow: unset !important;
+      text-shadow: unset !important;
+      border-radius: unset !important;
+
+      &:hover {
+        background-color: white !important;
+        color: black !important;
+      }
+    }
   }
 
-  .test-warning {
+  .payment {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    justify-content: space-between;
+    align-items: center;
     text-align: center;
     margin-top: 40px;
     font-size: 24px;
@@ -45,5 +91,21 @@
 @media only screen and (max-width: 700px) {
   .checkout-page {
     width: 90%;
+  }
+}
+
+@media only screen and (min-width: 2560px) {
+  .checkout-page {
+    .checkout-header {
+      font-size: 1.3em;
+    }
+
+    .total {
+      font-size: 2em;
+    }
+
+    .payment {
+      font-size: 1.5em;
+    }
   }
 }

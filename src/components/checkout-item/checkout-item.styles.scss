@@ -1,14 +1,14 @@
 .checkout-item {
   width: 100%;
   display: flex;
-  min-height: 100px;
   border-bottom: 1px solid darkgrey;
   padding: 15px 0;
   font-size: 20px;
   align-items: center;
 
   .image-container {
-    width: 23%;
+    width: 10.5vw;
+    height: 22vh;
     padding-right: 15px;
 
     img {
@@ -31,11 +31,23 @@
 
     .value {
       margin: 0 10px;
+      display: flex;
+      align-items: flex-end;
     }
   }
 
   .remove-button {
     padding-left: 12px;
     cursor: pointer;
+  }
+}
+
+@media only screen and (min-width: 2560px) {
+  .checkout-item {
+    .name,
+    .quantity,
+    .price {
+      font-size: 1.4em;
+    }
   }
 }

@@ -6,6 +6,7 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  padding-bottom: 10px;
 
   .shopping-icon {
     width: 24px;
@@ -16,6 +17,23 @@
     position: absolute;
     font-size: 10px;
     font-weight: bold;
-    bottom: 12px;
+    bottom: 18px;
+  }
+}
+
+@media only screen and (min-width: 2560px) {
+  .cart-icon {
+    height: 60px;
+    width: 60px;
+
+    .shopping-icon {
+      width: 35px;
+      height: 35px;
+    }
+
+    .item-count {
+      font-size: 14px;
+      bottom: 20px;
+    }
   }
 }

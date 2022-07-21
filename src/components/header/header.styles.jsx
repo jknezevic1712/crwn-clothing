@@ -7,7 +7,7 @@ const OptionContainerStyles = css`
 `;
 
 export const HeaderContainer = styled.div`
-  height: 70px;
+  height: 100%;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -23,11 +23,25 @@ export const HeaderContainer = styled.div`
 export const LogoContainer = styled(Link)`
   height: 100%;
   width: 70px;
-  padding: 25px;
+  padding: 0;
+  display: flex;
+  align-items: center;
 
   @media screen and (max-width: 800px) {
     width: 50px;
     padding: 0;
+  }
+
+  @media only screen and (min-width: 2560px) {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    width: 4em;
+
+    svg {
+      height: 7em;
+      width: 7em;
+    }
   }
 `;
 

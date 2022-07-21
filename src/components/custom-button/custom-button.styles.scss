@@ -22,16 +22,6 @@
     border: 1px solid black;
   }
 
-  &.google-sign-in {
-    background-color: #4285f4;
-    color: white;
-
-    &:hover {
-      background-color: #357ae8;
-      border: none;
-    }
-  }
-
   &.inverted {
     background-color: white;
     color: black;
@@ -41,6 +31,30 @@
       background-color: black;
       color: white;
       border: none;
+    }
+  }
+}
+
+.is-google-sign-in {
+  min-width: 165px;
+  width: auto;
+  height: 50px;
+  padding: 0 35px 0 35px;
+  display: flex;
+  justify-content: center;
+  background-color: transparent;
+  border: none;
+
+  svg {
+    box-sizing: content-box;
+    cursor: pointer;
+    height: inherit;
+    width: inherit;
+    border: 2px solid transparent;
+    border-radius: 5px;
+
+    &:hover {
+      border: 2px solid black;
     }
   }
 }

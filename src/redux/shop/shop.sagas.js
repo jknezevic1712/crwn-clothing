@@ -2,6 +2,7 @@ import {
   firestore,
   convertCollectionsSnapshotToMap,
 } from "../../firebase/firebase.utils";
+
 import {
   fetchCollectionsSuccess,
   fetchCollectionsFailure,

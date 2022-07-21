@@ -52,3 +52,15 @@ $main-color: black;
     }
   }
 }
+
+@media only screen and (min-width: 2560px) {
+  .group {
+    .form-input {
+      font-size: 1.2em;
+    }
+
+    .form-input-label {
+      font-size: 0.85em;
+    }
+  }
+}

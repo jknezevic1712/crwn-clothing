@@ -21,3 +21,15 @@
     }
   }
 }
+
+@media only screen and (min-width: 2560px) {
+  .cart-item {
+    height: 150px;
+
+    .item-details {
+      .name {
+        font-size: 22px;
+      }
+    }
+  }
+}

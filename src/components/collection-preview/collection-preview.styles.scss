@@ -1,7 +1,8 @@
 .collection-preview {
+  height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  margin-bottom: 30px;
 
   .title {
     font-size: 28px;
@@ -9,8 +10,18 @@
   }
 
   .preview {
+    height: 100%;
+    width: 100%;
     display: flex;
     justify-content: space-between;
+  }
+
+  &:first-child {
+    padding-top: 5%;
+  }
+
+  &:last-child {
+    padding-bottom: 5%;
   }
 }
 

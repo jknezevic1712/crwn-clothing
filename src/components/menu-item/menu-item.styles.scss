@@ -6,6 +6,7 @@
   align-items: center;
   justify-content: center;
   border: 1px solid black;
+  border-radius: 5px;
   margin: 0 7.5px 15px;
   overflow: hidden;
 
@@ -49,6 +50,7 @@
     align-items: center;
     justify-content: center;
     border: 1px solid black;
+    border-radius: 5px;
     background-color: white;
     opacity: 0.7;
     position: absolute;
@@ -71,5 +73,22 @@
   .menu-item,
   .menu-item.large {
     height: 200px;
+  }
+}
+
+@media only screen and (min-width: 2560px) {
+  .menu-item {
+    .content {
+      width: 220px;
+      height: 120px;
+
+      .title {
+        font-size: 1.3em;
+      }
+
+      .subtitle {
+        font-size: 1.05em;
+      }
+    }
   }
 }
