@@ -4,22 +4,24 @@ export const GlobalStyle = createGlobalStyle`
 
     * {
         box-sizing: border-box;
+        margin: 0;
+        padding: 0;
     }
 
     html {
-        height: 110vh;
+        height: 100vh;
         width: 100vw;
         background-color: #CFE1F7;
         overflow-x: hidden;
+        scroll-behavior: smooth;
+        font-size: 14px;
     }
        
     body {
         font-family: "Open Sans Condensed", sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-        margin: 0;
-        padding: 0;
-        height: 100vh;
+        height: 100%;
         width: 100%;
         display: flex;
         justify-content: center;
@@ -27,7 +29,7 @@ export const GlobalStyle = createGlobalStyle`
 
         #root {
             height: 100%;
-            width: 80%;
+            width: 95%;
             display: grid;
             grid-template-rows: 10% 90%;
         }
@@ -42,10 +44,9 @@ export const GlobalStyle = createGlobalStyle`
         border-radius: 5px;
     }
 
-    @media only screen and (min-width: 2560px) {
-        body {
-          font-size: 1.4em;
+    @media (min-width: 2560px) {
+        html {
+            font-size: 20px;
         }
     }
-    
 `;

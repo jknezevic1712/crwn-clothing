@@ -15,9 +15,9 @@
 
   .item-count {
     position: absolute;
-    font-size: 10px;
     font-weight: bold;
-    bottom: 18px;
+    font-size: 0.85rem;
+    bottom: 35%;
   }
 }
 
@@ -32,8 +32,7 @@
     }
 
     .item-count {
-      font-size: 14px;
-      bottom: 20px;
+      bottom: 30%;
     }
   }
 }

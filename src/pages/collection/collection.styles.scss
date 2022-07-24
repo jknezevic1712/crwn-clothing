@@ -2,11 +2,12 @@
   height: 100%;
   width: 100%;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 
   .title {
-    font-size: 38px;
-    margin: 0 auto 30px;
+    font-size: 2.7rem;
   }
 
   .items {
@@ -14,23 +15,9 @@
     width: 100%;
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 5%;
-
-    & .collection-item {
-      height: 50%;
-    }
-  }
-}
-
-@media screen and (max-width: 800px) {
-  .collection-page {
-    align-items: center;
-
-    .items {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-gap: 15px;
-    }
+    margin-top: 10%;
   }
 }

@@ -1,11 +1,9 @@
 .custom-button {
-  min-width: 165px;
+  min-width: 100px;
   width: auto;
   height: 50px;
   letter-spacing: 0.5px;
   line-height: 50px;
-  padding: 0 35px 0 35px;
-  font-size: 15px;
   background-color: black;
   color: white;
   text-transform: uppercase;
@@ -36,10 +34,9 @@
 }
 
 .is-google-sign-in {
-  min-width: 165px;
+  min-width: 100px;
   width: auto;
   height: 50px;
-  padding: 0 35px 0 35px;
   display: flex;
   justify-content: center;
   background-color: transparent;
@@ -56,5 +53,15 @@
     &:hover {
       border: 2px solid black;
     }
+  }
+}
+
+@media (min-width: 2560px) {
+  .custom-button {
+    min-width: 120px;
+  }
+
+  .is-google-sign-in {
+    min-width: 120px;
   }
 }

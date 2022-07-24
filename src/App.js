@@ -2,6 +2,7 @@ import React, { useEffect, lazy, Suspense } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 
+import "./normalize.styles.scss";
 import { GlobalStyle } from "./global.styles";
 
 import Header from "./components/header/header.component";

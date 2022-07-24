@@ -6,6 +6,7 @@ import { ReactComponent as Logo } from "../../assets/crown.svg";
 import {
   HeaderContainer,
   LogoContainer,
+  LogoAsLink,
   OptionsContainer,
   OptionLink,
 } from "./header.styles";
@@ -18,8 +19,10 @@ import { signOutStart } from "../../redux/user/user.actions";
 
 const Header = ({ currentUser, hidden, signOutStart }) => (
   <HeaderContainer>
-    <LogoContainer to="/">
-      <Logo className="logo" />
+    <LogoContainer>
+      <LogoAsLink to="/">
+        <Logo className="logo" />
+      </LogoAsLink>
     </LogoContainer>
     <OptionsContainer>
       <OptionLink to="/shop">SHOP</OptionLink>
