@@ -41,9 +41,9 @@ const CheckoutPage = ({ cartItems, total }) => (
       <div className="payment">
         <div className="payment-info">
           <p>*Please use the following test credit card for payments*</p>
-          <p>4242 4242 4242 4242 - Exp: 01/22 - CVV: 123</p>
+          <p>4242 4242 4242 4242 - Exp: 01/24 - CVV: 123</p>
         </div>
-        <div className="payment-button">
+        <div className={`${total == 0 ? 'disabled-payment-button' : 'payment-button'}`}>
           <StripeCheckoutButton price={total} />
         </div>
       </div>

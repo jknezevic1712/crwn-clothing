@@ -76,6 +76,43 @@
           }
         }
       }
+
+      .disabled-payment-button {
+        button {
+          min-width: 165px !important;
+          width: auto !important;
+          height: 50px !important;
+          letter-spacing: 0.5px !important;
+          line-height: 50px !important;
+          padding: 0 35px 0 35px !important;
+          background: white !important;
+          color: gray !important;
+          text-transform: uppercase !important;
+          font-family: "Open Sans Condensed" !important;
+          font-weight: bolder !important;
+          border: none !important;
+          cursor: not-allowed !important;
+          display: flex !important;
+          justify-content: center !important;
+
+          span {
+            background: white !important;
+            background-image: unset !important;
+            font-family: unset !important;
+            font-size: unset !important;
+            position: unset !important;
+            padding: unset !important;
+            display: unset !important;
+            height: unset !important;
+            line-height: unset !important;
+            color: unset !important;
+            font-weight: unset !important;
+            box-shadow: unset !important;
+            text-shadow: unset !important;
+            border-radius: unset !important;
+          }
+        }
+      }
     }
   }
 }
